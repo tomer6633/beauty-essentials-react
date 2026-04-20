@@ -28,7 +28,7 @@ export default function Navbar() {
           onClick={() => navigate("/")}
           className="text-xl font-bold text-gray-900 oswald tracking-tight bg-transparent border-none cursor-pointer"
         >
-          Absolute <span style={{ color: business.colorPrimary }}>Drywall</span>
+          Beauty Essentials <span style={{ color: business.colorPrimary }}>Nails & Spa</span>
         </button>
 
         {/* Desktop links */}

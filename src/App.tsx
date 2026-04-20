@@ -9,7 +9,7 @@ function Footer() {
   return (
     <footer className="bg-[#0f172a] text-slate-500 text-center py-5 text-sm px-4">
       © 2025{" "}
-      <span className="text-blue-400 font-semibold">Absolute Drywall</span>{" "}
+      <span className="text-blue-400 font-semibold">Beauty Essentials Nails & Spa</span>{" "}
       — London, ON · 1475 North Vernon Ave ·{" "}
       <a href="tel:5192751009" className="text-blue-400 hover:text-blue-300">
         (519) 275-1009
