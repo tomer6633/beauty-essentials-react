@@ -9,7 +9,7 @@ export default function StatsBar() {
       {business.stats.map((s) => (
         <div key={s.label} className="text-center">
           <div className="oswald text-3xl font-bold text-white">{s.value}</div>
-          <div className="text-xs text-blue-100 uppercase tracking-wider mt-0.5">
+          <div className="text-xs text-pink-100 uppercase tracking-wider mt-0.5">
             {s.label}
           </div>
         </div>

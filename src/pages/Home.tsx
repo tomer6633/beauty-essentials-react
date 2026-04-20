@@ -12,16 +12,19 @@ export default function Home() {
       <StatsBar />
 
       {/* Services */}
-      <section id="services" className="py-20 px-8 md:px-20 bg-slate-50">
+      <section id="services" className="py-20 px-8 md:px-20 bg-white">
         <div className="max-w-6xl mx-auto">
-          <p className="text-xs font-bold tracking-widest uppercase mb-2" style={{ color: business.colorPrimary }}>
-            What We Do
+          <p
+            className="text-xs font-bold tracking-widest uppercase mb-2"
+            style={{ color: business.colorPrimary }}
+          >
+            What We Offer
           </p>
           <h2 className="oswald text-4xl font-bold text-gray-900 mb-3">
-            Professional Drywall Services
+            Our Services
           </h2>
           <p className="text-gray-500 mb-12 max-w-lg">
-            From new builds to finishing touches — every stage handled with care and craftsmanship.
+            From classic manicures to full acrylic sets and waxing — everything done with care and precision.
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {business.services.map((s, i) => (
@@ -32,11 +35,11 @@ export default function Home() {
       </section>
 
       {/* About */}
-      <section id="about" className="py-20 px-8 md:px-20 bg-white">
+      <section id="about" className="py-20 px-8 md:px-20 bg-pink-50">
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
           <motion.img
             src={business.aboutImage}
-            alt="Drywall professional at work"
+            alt="Beauty Essentials Nails & Spa — London, ON"
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
@@ -47,35 +50,44 @@ export default function Home() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
           >
-            <p className="text-xs font-bold tracking-widest uppercase mb-2" style={{ color: business.colorPrimary }}>
+            <p
+              className="text-xs font-bold tracking-widest uppercase mb-2"
+              style={{ color: business.colorPrimary }}
+            >
               About Us
             </p>
             <h2 className="oswald text-4xl font-bold text-gray-900 mb-4">
-              Perfection Is the Standard, Not the Exception.
+              Tony & Lynn — Old South's Nail Experts for 20+ Years.
             </h2>
             <p className="text-gray-500 leading-relaxed mb-4">
-              Absolute Drywall is a locally owned London, ON business specializing in residential drywall that meets — and exceeds — expectations. New builds, renovations, additions and repairs.
+              Beauty Essentials Nails & Spa has been a beloved part of the Old South community in London, Ontario for over two decades. Tony and Lynn greet every client by name — because to them, you're not just a customer, you're family.
             </p>
             <p className="text-gray-500 leading-relaxed mb-6">
-              We use only the best materials and our efficient timelines keep your project moving on schedule.
+              Whether it's your first visit or your 100th, you'll leave feeling refreshed, pampered, and perfectly polished.
             </p>
             <ul className="space-y-3 mb-8">
               {business.checkList.map((item) => (
-                <li key={item} className="flex items-start gap-3 text-gray-800 text-sm">
-                  <span className="font-bold mt-0.5" style={{ color: business.colorPrimary }}>✓</span>
+                <li
+                  key={item}
+                  className="flex items-start gap-3 text-gray-800 text-sm"
+                >
+                  <span
+                    className="font-bold mt-0.5"
+                    style={{ color: business.colorPrimary }}
+                  >
+                    ✓
+                  </span>
                   {item}
                 </li>
               ))}
             </ul>
-            <button
-              onClick={() =>
-                document.querySelector("#contact")?.scrollIntoView({ behavior: "smooth" })
-              }
-              className="px-7 py-3 rounded-xl text-white font-bold transition-all hover:-translate-y-0.5 hover:shadow-md"
+            <a
+              href={business.phoneTel}
+              className="inline-block px-7 py-3 rounded-xl text-white font-bold transition-all hover:-translate-y-0.5 hover:shadow-md"
               style={{ backgroundColor: business.colorPrimary }}
             >
-              Book a Consultation
-            </button>
+              📞 Call to Book — {business.phone}
+            </a>
           </motion.div>
         </div>
       </section>
@@ -83,79 +95,115 @@ export default function Home() {
       <ReviewSection />
 
       {/* Contact */}
-      <section id="contact" className="py-20 px-8 md:px-20" style={{ background: business.colorDark }}>
+      <section
+        id="contact"
+        className="py-20 px-8 md:px-20"
+        style={{ background: business.colorDark }}
+      >
         <div className="max-w-6xl mx-auto">
-          <p className="text-xs font-bold tracking-widest uppercase mb-2 text-blue-400">
+          <p className="text-xs font-bold tracking-widest uppercase mb-2 text-pink-300">
             Get In Touch
           </p>
           <h2 className="oswald text-4xl font-bold text-white mb-3">
-            Ready for a Free Quote?
+            Book Your Appointment
           </h2>
-          <p className="text-slate-400 mb-12 max-w-lg">
-            Tell us about your project and we'll get back to you fast. No obligation, no pressure.
+          <p className="text-pink-200 mb-12 max-w-lg">
+            Call or drop by — walk-ins are always welcome at Beauty Essentials.
           </p>
 
           <div className="grid md:grid-cols-2 gap-12">
-            {/* Info */}
+            {/* Contact Info */}
             <div className="space-y-6">
               {[
-                { icon: "📞", label: "Phone", value: business.phone, href: `tel:${business.phoneRaw}` },
-                { icon: "📍", label: "Location", value: business.address, href: undefined },
-                { icon: "🕐", label: "Hours", value: business.hours, href: undefined },
+                {
+                  icon: "📞",
+                  label: "Phone",
+                  value: business.phone,
+                  href: business.phoneTel,
+                },
+                {
+                  icon: "📍",
+                  label: "Location",
+                  value: business.address,
+                  href: undefined,
+                },
+                {
+                  icon: "🕐",
+                  label: "Hours",
+                  value: business.hours,
+                  href: undefined,
+                },
               ].map((item) => (
                 <div key={item.label} className="flex items-start gap-4">
-                  <div className="w-11 h-11 rounded-xl flex items-center justify-center text-xl flex-shrink-0" style={{ background: "rgba(255,255,255,0.08)" }}>
+                  <div
+                    className="w-11 h-11 rounded-xl flex items-center justify-center text-xl flex-shrink-0"
+                    style={{ background: "rgba(255,255,255,0.08)" }}
+                  >
                     {item.icon}
                   </div>
                   <div>
-                    <div className="text-xs text-slate-400 uppercase tracking-wider mb-0.5">{item.label}</div>
+                    <div className="text-xs text-pink-300 uppercase tracking-wider mb-0.5">
+                      {item.label}
+                    </div>
                     {item.href ? (
-                      <a href={item.href} className="text-blue-300 font-semibold hover:text-blue-200">{item.value}</a>
+                      <a
+                        href={item.href}
+                        className="text-pink-200 font-semibold hover:text-white transition-colors"
+                      >
+                        {item.value}
+                      </a>
                     ) : (
-                      <p className="text-slate-200 text-sm">{item.value}</p>
+                      <p className="text-pink-100 text-sm">{item.value}</p>
                     )}
                   </div>
                 </div>
               ))}
+
+              {/* Walk-ins welcome callout */}
+              <div
+                className="rounded-2xl p-5 mt-4"
+                style={{ background: "rgba(255,255,255,0.07)" }}
+              >
+                <p className="text-white font-semibold mb-1">Walk-ins Welcome</p>
+                <p className="text-pink-200 text-sm leading-relaxed">
+                  No appointment needed — just come in and Tony or Lynn will take care of you.
+                </p>
+              </div>
             </div>
 
-            {/* Form */}
-            <form onSubmit={(e) => e.preventDefault()} className="space-y-4">
-              <div className="grid grid-cols-2 gap-4">
-                <div className="flex flex-col gap-1.5">
-                  <label className="text-xs text-slate-400">First Name</label>
-                  <input type="text" placeholder="John" className="bg-white/8 border border-white/10 rounded-lg px-4 py-3 text-white text-sm placeholder-slate-500 focus:outline-none focus:border-blue-500" style={{ background: "rgba(255,255,255,0.07)" }} />
-                </div>
-                <div className="flex flex-col gap-1.5">
-                  <label className="text-xs text-slate-400">Last Name</label>
-                  <input type="text" placeholder="Smith" className="border border-white/10 rounded-lg px-4 py-3 text-white text-sm placeholder-slate-500 focus:outline-none focus:border-blue-500" style={{ background: "rgba(255,255,255,0.07)" }} />
-                </div>
-              </div>
-              <div className="flex flex-col gap-1.5">
-                <label className="text-xs text-slate-400">Phone</label>
-                <input type="tel" placeholder="(519) 000-0000" className="border border-white/10 rounded-lg px-4 py-3 text-white text-sm placeholder-slate-500 focus:outline-none focus:border-blue-500" style={{ background: "rgba(255,255,255,0.07)" }} />
-              </div>
-              <div className="flex flex-col gap-1.5">
-                <label className="text-xs text-slate-400">Service Needed</label>
-                <select className="border border-white/10 rounded-lg px-4 py-3 text-white text-sm focus:outline-none focus:border-blue-500" style={{ background: business.colorDark }}>
-                  {business.services.map((s) => (
-                    <option key={s.id}>{s.title}</option>
-                  ))}
-                  <option>Repair / Other</option>
-                </select>
-              </div>
-              <div className="flex flex-col gap-1.5">
-                <label className="text-xs text-slate-400">Message</label>
-                <textarea rows={4} placeholder="Tell us about your project..." className="border border-white/10 rounded-lg px-4 py-3 text-white text-sm placeholder-slate-500 focus:outline-none focus:border-blue-500 resize-none" style={{ background: "rgba(255,255,255,0.07)" }} />
-              </div>
-              <button
-                type="submit"
-                className="w-full py-3.5 rounded-xl text-white font-bold text-base transition-all hover:-translate-y-0.5 hover:shadow-lg"
+            {/* Right side: big CTA + map-style info */}
+            <div className="flex flex-col gap-5 justify-center">
+              <a
+                href={business.phoneTel}
+                className="w-full flex items-center justify-center gap-3 py-5 rounded-2xl text-white font-bold text-xl transition-all hover:-translate-y-1 hover:shadow-xl"
                 style={{ backgroundColor: business.colorPrimary }}
               >
-                Send Message →
-              </button>
-            </form>
+                📞 Call Now — {business.phone}
+              </a>
+
+              <div
+                className="rounded-2xl p-5 text-center"
+                style={{ background: "rgba(255,255,255,0.05)" }}
+              >
+                <p className="text-pink-200 text-sm font-medium mb-1">Find Us At</p>
+                <p className="text-white font-semibold">
+                  100 Belmont Dr Unit 7
+                </p>
+                <p className="text-pink-200 text-sm">London, ON N6J 2N8</p>
+                <p className="text-pink-300 text-sm mt-2">
+                  Old South / Belmont Village
+                </p>
+              </div>
+
+              <div
+                className="rounded-2xl p-5 text-center"
+                style={{ background: "rgba(255,255,255,0.05)" }}
+              >
+                <p className="text-pink-200 text-sm font-medium mb-1">Hours</p>
+                <p className="text-white font-semibold">Mon – Sat: 10am – 6pm</p>
+                <p className="text-pink-300 text-sm mt-1">Closed Sundays</p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
