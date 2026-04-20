@@ -12,7 +12,7 @@ export default function ReviewSection() {
           5-Star Work, Every Project
         </h2>
         <p className="text-gray-500 mb-12 max-w-lg">
-          London homeowners trust Absolute Drywall for quality that speaks for itself.
+          London homeowners trust Beauty Essentials Nails & Spa for quality that speaks for itself.
         </p>
 
         {/* Key Insight Callout */}

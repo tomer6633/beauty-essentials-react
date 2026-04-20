@@ -28,11 +28,11 @@ export default function Hero() {
             className="inline-block text-xs font-bold tracking-widest uppercase px-4 py-1.5 rounded-full mb-5"
             style={{ background: "#dbeafe", color: business.colorPrimary }}
           >
-            London's Drywall Specialists
+           Beauty Essentials Nails & Spa
           </span>
 
           <h1 className="oswald text-5xl md:text-6xl font-bold text-white leading-tight mb-5">
-            Flawless Walls.{" "}
+            Perfect Nails.{" "}
             <em className="not-italic" style={{ color: "#60a5fa" }}>
               Perfect Finish.
             </em>{" "}
